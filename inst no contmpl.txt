@@ -1,0 +1,156 @@
+            case "DB":
+              INSTRUCCION="IN A,(np)";
+                T=T+10;
+                break;
+
+//  //todas estas instrucciones debe de asociarse el valor del registro correspondiente a (C), lo que no s es, que es (C)  
+case "ED78":    
+      T=T+11;
+      F=grabarFlag("N",'0',F);
+      F=grabarFlag("H",'0',F);
+      F=determinarFlag("S",A,F);
+      F=determinarFlag("Z",A,F);
+      F=determinarFlag("P",A,F);
+      INSTRUCCION="IN A,(C)";
+      break;
+        
+case"ED40":
+      F=grabarFlag("N",'0',F);
+      F=grabarFlag("H",'0',F);
+        F=determinarFlag("S",B,F);
+        F=determinarFlag("Z",B,F);
+        F=determinarFlag("P",B,F);
+        T=T+11;
+      INSTRUCCION="IN B,(C)";
+        break;
+        
+    case"ED48":
+        F=grabarFlag("N",'0',F);
+       F=grabarFlag("H",'0',F);
+        F=determinarFlag("S",C,F);
+        F=determinarFlag("Z",C,F);
+        F=determinarFlag("P",C,F);
+        T=T+11;
+      INSTRUCCION="IN C,(C)";
+        break;
+        
+    case"ED50":
+        F=grabarFlag("N",'0',F);
+       F=grabarFlag("H",'0',F);
+        F=determinarFlag("S",D,F);
+        F=determinarFlag("Z",D,F);
+        F=determinarFlag("P",D,F);
+        T=T+11;
+      INSTRUCCION="IN D,(C)";
+        break;
+        
+    case"ED58":
+        F=grabarFlag("N",'0',F);
+       F=grabarFlag("H",'0',F);
+        F=determinarFlag("S",E,F);
+        F=determinarFlag("Z",E,F);
+        F=determinarFlag("P",E,F);
+        T=T+11;
+      INSTRUCCION="IN E,(C)";
+        break;
+        
+    case"ED60":
+        F=grabarFlag("N",'0',F);
+       F=grabarFlag("H",'0',F);
+        F=determinarFlag("S",H,F);
+        F=determinarFlag("Z",H,F);
+        F=determinarFlag("P",H,F);
+        T=T+11;
+      INSTRUCCION="IN H,(C)";
+        break;
+        
+    case"ED68":
+        F=grabarFlag("N",'0',F);
+       F=grabarFlag("H",'0',F);
+        F=determinarFlag("S",L,F);
+        F=determinarFlag("Z",L,F);
+        F=determinarFlag("P",L,F);
+        T=T+11;
+      INSTRUCCION="IN L,(C)";
+        break;
+        
+    
+        
+        //EN TODAS ESTAS INSTRUCCIOONES SE ASOCIA (C) al registro correspondiente
+        
+    case "ED79":
+        T=T+12;
+      //OUT (C),A
+        INSTRUCCION="OUT (C),A";
+        break;
+
+    case"ED41":
+        T=T+12;
+      INSTRUCCION="OUT (C),B";
+        break;
+
+    case"ED49":
+        T=T+12;
+      INSTRUCCION="OUT (C),C";
+
+        break;
+    case"ED51":
+        T=T+12;
+      INSTRUCCION="OUT (C),D";
+        break;
+    case"ED59":
+        T=T+12;
+      INSTRUCCION="OUT (C),E";
+        break;
+    case"ED61":
+        T=T+12;
+      INSTRUCCION="OUT (C),H";
+        break;
+    case"ED69":
+        T=T+12;
+      INSTRUCCION="OUT (C),L";
+        break;
+
+
+  
+case"EDA2":
+    INSTRUCCION="* INI";
+    break;
+    
+case"EDB2":
+    INSTRUCCION="* INIR";
+    break;
+    
+case"EDAA":
+    INSTRUCCION="* IND";
+    break;
+    
+case"EDBA":
+    INSTRUCCION="* INDR";
+    break;
+    
+case"EDA3":
+    INSTRUCCION="* OUTI";
+    break;
+    
+case"EDB3":
+    INSTRUCCION="* OUTIR";
+    break;
+    
+case"EDAB":
+    INSTRUCCION="* OUTD";
+    break;
+    
+case"EDBB":
+    INSTRUCCION="* OUTDR";
+    break;
+
+
+   case"ED4D":
+       INSTRUCCION="RETI(RETORNO DE INTERRUPCION)";
+       T=T+14;
+        break;
+      case"ED45":
+       INSTRUCCION="RETN(RETORNO DE INTERRUPCION NO ENMASCARABLES)";
+       T=T+14;
+        break; 
